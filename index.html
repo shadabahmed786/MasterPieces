@@ -1,0 +1,1274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Master Pieces — Signage & Design</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand-orange: #E17921;
+      --black: #000000;
+      --white: #ffffff;
+    }
+
+    /* Basic page reset */
+    body{
+      font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: var(--black);
+      margin:0;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Navbar */
+    .site-navbar{
+      background: #fff;
+      padding: 18px 36px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      z-index: 50;
+    }
+    .site-logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:700;
+    }
+    .site-logo .logomark{
+      width:68px; height:68px; border-radius:6px;
+      background: var(--brand-orange);
+      display:inline-flex; align-items:center; justify-content:center;
+      color: var(--white); font-weight:900; font-family:"Bebas Neue";
+    }
+    .nav-link{
+      color: var(--black) !important;
+      font-weight:500;
+      letter-spacing:0.02em;
+      padding: .6rem 0.9rem;
+    }
+    .nav-link:hover, .nav-link.active{
+      color: var(--brand-orange) !important;
+      position:relative;
+    }
+    .nav-link.active::after{
+      content:"";
+      height:3px;
+      width:40%;
+      background:var(--brand-orange);
+      position:absolute;
+      bottom:-8px;
+      left:30%;
+      border-radius:3px;
+    }
+
+    /* Language toggle */
+    .lang-toggle button{
+      border: none; background: transparent; font-size: 18px; margin-left: 6px;
+    }
+
+    /* Hero */
+    .hero{
+      position:relative;
+      height: 66vh;
+      min-height: 420px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .hero .hero-bg{
+      position:absolute; inset:0;
+      background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&s=6d2d6f48d8f3c5f82c6e5b1b3e24e2b3');
+      background-size:cover;
+      background-position:center;
+      filter:brightness(0.55);
+      z-index:0;
+    }
+    .hero .container{
+      z-index: 2;
+      text-align:center;
+      color:var(--white);
+    }
+    .hero .eyebrow{
+      text-transform:uppercase; color:var(--brand-orange);
+      letter-spacing:0.12em; font-weight:700; font-size:13px;
+      margin-bottom:12px;
+    }
+    .hero h1{
+      font-family:"Bebas Neue", sans-serif;
+      font-size:48px; line-height:1;
+      margin:0 0 14px;
+      letter-spacing:0.02em;
+    }
+    .hero p.lead{
+      font-size:18px; color: rgba(255,255,255,0.95); max-width:850px; margin:0 auto;
+      font-weight:300;
+    }
+    .hero .ctas{ margin-top:26px; }
+
+    .btn-primary-brand{
+      background: var(--brand-orange);
+      border: 1px solid var(--brand-orange);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-weight:700;
+    }
+    .btn-outline-light-brand{
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.9);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 4px;
+      margin-left:10px;
+      font-weight:700;
+    }
+
+    /* Services / Body spacing */
+    main{ padding: 60px 0; }
+
+    /* RTL adjustments when needed */
+    html[dir="rtl"] .site-navbar .navbar-nav {
+      direction: rtl;
+    }
+    html[dir="rtl"] .site-navbar .navbar-brand { order: 2; }
+    html[dir="rtl"] .site-navbar .navbar-collapse { order: 1; }
+    html[dir="rtl"] .nav-link.active::after { left:auto; right:30%; }
+    html[dir="rtl"] .hero { text-align: center; } /* keep center for hero */
+
+    /* Responsive */
+    @media (max-width: 768px){
+      .hero h1{ font-size:34px; }
+      .site-logo .logomark{ width:52px; height:52px; font-size:22px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="site-navbar shadow-sm">
+    <nav class="container navbar navbar-expand-lg p-0 align-items-center">
+      <a class="navbar-brand d-flex align-items-center site-logo me-3" href="#">
+        <div class="logomark">MP</div>
+        <div>
+          <div style="font-size:16px; font-weight:800; color:var(--black)">Master Pieces</div>
+          <div style="font-size:11px; color:rgba(0,0,0,0.55)">Advertising Agency</div>
+        </div>
+      </a>
+
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active" data-i18n="nav.home" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" data-i18n="nav.about" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" data-i18n="nav.services" href="#">Services</a></li>
+          <li class="nav-item"><a class="nav-link" data-i18n="nav.portfolio" href="#">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" data-i18n="nav.team" href="#">Team</a></li>
+          <li class="nav-item"><a class="nav-link" data-i18n="nav.contact" href="#">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center ms-3 lang-toggle">
+          <!-- Language toggle: show both, active style applied via JS -->
+          <button id="btn-en" class="btn" title="English">🇬🇧 <span class="d-none d-md-inline">EN</span></button>
+          <button id="btn-ar" class="btn" title="Arabic">🇸🇦 <span class="d-none d-md-inline">AR</span></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero / Banner -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="eyebrow" data-i18n="hero.eyebrow">Building Unique and Creative Design</div>
+      <h1 data-i18n="hero.title">WE TRANSFORM BRANDS THROUGH SIGNAGE & DESIGN</h1>
+      <p class="lead" data-i18n="hero.subtitle">Creating powerful visual experiences for every space.</p>
+
+      <div class="ctas">
+        <button class="btn btn-primary-brand" data-i18n="hero.cta1">Get Quote</button>
+        <button class="btn btn-outline-light-brand" data-i18n="hero.cta2">Explore Services</button>
+      </div>
+    </div>
+  </section>
+
+<section class="container my-5">
+    <div class="row g-4 align-items-center">
+        <!-- Text content -->
+        <div class="col-lg-6">
+            <div class="p-4 bg-white rounded shadow-sm">
+                <div class="eyebrow mb-2" style="color:var(--brand-orange); font-weight:700; letter-spacing:0.12em;">About Us</div>
+                <h2 class="mb-3" style="font-family:'Bebas Neue', sans-serif; font-size:34px; line-height:1;">Crafting Visual Excellence. Building Brand Impact.</h2>
+
+                <p class="text-muted mb-3">
+                    At Master Pieces, we believe that every surface is a canvas — an opportunity to communicate, inspire, and leave a lasting impression.
+                    As a full-service visual branding and production agency, we deliver creative, durable, and visually striking solutions across signage, cladding,
+                    vehicle branding, and custom graphics.
+                </p>
+
+                <p class="text-muted mb-3">
+                    Founded on a passion for design and a commitment to precision, Master Pieces has grown into a trusted partner for businesses looking to stand out.
+                    From bold 3D signs and fleet branding to high-rise facades, we bring ideas to life with expert craftsmanship and cutting-edge technology.
+                </p>
+
+                <hr>
+
+                <h6 class="mb-2" style="font-weight:700;">What We Do</h6>
+                <ul class="list-unstyled small mb-3">
+                    <li class="mb-1">• Exterior &amp; Interior Cladding</li>
+                    <li class="mb-1">• Large-format Graphic Printing &amp; Installation</li>
+                    <li class="mb-1">• Vehicle Wrapping &amp; Sticker Application</li>
+                    <li class="mb-1">• Custom Signage &amp; 3D Lettering</li>
+                    <li class="mb-1">• Acrylic Fabrication &amp; Branding Displays</li>
+                    <li class="mb-1">• Banner Design &amp; Printing</li>
+                    <li class="mb-1">• Corporate &amp; Environmental Graphics</li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!-- Visual + Mission/Vision -->
+        <div class="col-lg-6">
+            <div class="rounded overflow-hidden shadow-sm">
+                <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=9f0f9b2e9dd4b2f2b33b7f0e5c1a6b8a"
+                         class="img-fluid" alt="Workshop team fabricating signage" style="display:block; width:100%; height:100%; object-fit:cover;">
+            </div>
+
+            <div class="d-flex gap-3 mt-3">
+                <div class="p-3 bg-light rounded flex-fill text-center">
+                    <h6 class="mb-1" style="font-weight:700;">Our Mission</h6>
+                    <p class="small text-muted mb-0">To transform everyday spaces into powerful brand experiences through innovative design, high-quality production, and reliable execution.</p>
+                </div>
+                <div class="p-3 bg-light rounded flex-fill text-center">
+                    <h6 class="mb-1" style="font-weight:700;">Our Vision</h6>
+                    <p class="small text-muted mb-0">To be the leading name in visual branding and signage solutions — known for creativity, quality, and service excellence.</p>
+                </div>
+            </div>
+
+            <div class="mt-3 p-3 rounded" style="background:linear-gradient(90deg, rgba(225,121,33,0.06), rgba(225,121,33,0.02));">
+                <h6 class="mb-2" style="font-weight:700;">Why Choose Master Pieces?</h6>
+                <ul class="small mb-0">
+                    <li class="mb-1">• One-stop creative &amp; production agency</li>
+                    <li class="mb-1">• Custom solutions tailored to your brand’s personality</li>
+                    <li class="mb-1">• Premium materials and environmentally responsible practices</li>
+                    <li class="mb-1">• Experienced team with a passion for visual storytelling</li>
+                    <li class="mb-1">• Nationwide service coverage with consistent quality</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section (enhanced styling + interactions) -->
+<section id="services" class="py-5 position-relative" style="background: linear-gradient(180deg,#fff 0%, #fffbf6 100%);">
+    <style>
+        /* Scoped styles for services */
+        #services { overflow: visible; }
+        #services .services-wrap{ position:relative; z-index:2; }
+        #services .section-title{ color:var(--brand-orange); font-weight:800; letter-spacing:0.04em; }
+        #services .lead-muted{ max-width:700px; margin:auto; color:rgba(0,0,0,0.65); }
+
+        /* Card look */
+        .service-card{
+            border:0;
+            border-radius:12px;
+            transition: transform .36s cubic-bezier(.2,.9,.2,1), box-shadow .36s;
+            overflow:hidden;
+            background:linear-gradient(180deg, #ffffff 0%, rgba(225,121,33,0.02) 100%);
+            min-height:150px;
+            display:flex;
+            align-items:flex-start;
+            gap:18px;
+            padding:20px;
+        }
+        .service-card:hover{
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(14,21,47,0.08);
+        }
+
+        .service-icon{
+            flex: 0 0 72px;
+            height:72px;
+            border-radius:14px;
+            display:inline-grid;
+            place-items:center;
+            font-size:28px;
+            color: #fff;
+            font-weight:700;
+            box-shadow: 0 6px 18px rgba(225,121,33,0.12);
+        }
+        .icon-orange{ background: linear-gradient(135deg,#E17921,#ff9a45); }
+        .icon-blue{ background: linear-gradient(135deg,#3b82f6,#60a5fa); }
+        .icon-green{ background: linear-gradient(135deg,#10b981,#34d399); }
+        .icon-pink{ background: linear-gradient(135deg,#ec4899,#f472b6); }
+
+        .service-card h5{ margin:0 0 6px; font-weight:800; color:#E17921; font-size:1.02rem; }
+        .service-card p{ margin:0; color:rgba(0,0,0,0.65); font-size:0.95rem; }
+
+        .service-meta{ margin-left:auto; display:flex; align-items:flex-end; gap:12px; }
+        .service-cta{
+            background:transparent;
+            border:1px solid rgba(0,0,0,0.06);
+            color:#333;
+            padding:6px 10px;
+            border-radius:8px;
+            font-weight:700;
+            font-size:0.85rem;
+        }
+        .service-cta:hover{ border-color:var(--brand-orange); color:var(--brand-orange); }
+
+        /* staggered entrance */
+        .reveal{ opacity:0; transform:translateY(10px); transition: all .6s cubic-bezier(.2,.9,.2,1); }
+        .reveal.in-view{ opacity:1; transform:none; }
+
+        /* responsive tweaks */
+        @media (max-width:767px){
+            .service-card{ align-items:center; }
+            .service-meta{ margin-left:0; margin-top:8px; }
+        }
+    </style>
+     <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="eyebrow mb-2" style="color:var(--brand-orange); font-weight:700; letter-spacing:0.12em; font-size:20px;">Our Services</div>
+    <style>
+        .section-underline{
+            width:80px;
+            height:6px;
+            background:var(--brand-orange);
+            border-radius:4px;
+            margin:12px auto;
+            box-shadow:0 8px 18px rgba(225,121,33,0.12);
+        }
+        @media (max-width:768px){
+            .section-underline{ width:60px; height:5px; }
+        }
+    </style>
+
+    <div class="section-underline" aria-hidden="true"></div>
+      <p class="text-muted" style="color:var(--brand-orange); font-weight:700; letter-spacing:0.12em;">Creative. Bold. Impactful.</p>
+      <p>We deliver innovative visual communication solutions that elevate brands and transform spaces using premium materials and precision execution.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- 1. Cladding -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Cladding (Interior & Exterior)</h5>
+            <ul class="small">
+              <li>Aluminum Composite Panels (ACP)</li>
+              <li>Wooden, metallic, & textured finishes</li>
+              <li>Storefront transformations</li>
+              <li>Brand-integrated wall cladding</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Graphic Printing & Installation -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Graphic Printing & Installation</h5>
+            <ul class="small">
+              <li>Wall graphics (interior & exterior)</li>
+              <li>Window frosting & decals</li>
+              <li>Floor graphics</li>
+              <li>Custom murals</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Vehicle Stickers -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Vehicle Stickers & Application</h5>
+            <ul class="small">
+              <li>Full & partial wraps</li>
+              <li>Magnetic signs</li>
+              <li>Reflective & specialty vinyls</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Branding & Acrylic Works -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Branding & Acrylic Works</h5>
+            <ul class="small">
+              <li>Logo signs & display cases</li>
+              <li>Custom acrylic letters</li>
+              <li>POS branding elements</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Banner Printing -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Banner Printing</h5>
+            <ul class="small">
+              <li>PVC banners</li>
+              <li>Roll-up & pop-up banners</li>
+              <li>Mesh banners</li>
+              <li>Event & promotional banners</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. 3D Letters Fabrication -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">3D Letters Fabrication</h5>
+            <ul class="small">
+              <li>Zinkor, Acrylic, Stainless Steel</li>
+              <li>Foam & Aluminum</li>
+              <li>Backlit or front-lit options</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Signage Design & Production -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Signage Design & Production</h5>
+            <ul class="small">
+              <li>Indoor & outdoor signs</li>
+              <li>Directional signage</li>
+              <li>Digital & LED signage</li>
+              <li>Safety signs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Custom Graphics -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Custom Graphics</h5>
+            <ul class="small">
+              <li>Corporate branding</li>
+              <li>Campaign visuals</li>
+              <li>Illustrations & artwork</li>
+              <li>Social media graphics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Services -->
+      <div class="col-lg-8 col-md-12">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <h5 class="card-title fw-bold" style="color:var(--brand-orange); font-weight:700; font-size:20px;">Additional Relevant Services</h5>
+            <ul class="small">
+              <li>Wayfinding Systems for malls, hospitals, offices</li>
+              <li>LED & Digital Display Solutions</li>
+              <li>Full installation services nationwide</li>
+              <li>Maintenance & repair support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  #services .card {
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+  }
+  #services .card:hover {
+    transform: translateY(-8px);
+  }
+</style>
+</section>
+
+<section class="why-choose-us py-5">
+    <style>
+        .why-choose-us {
+            background: linear-gradient(180deg, rgba(225,121,33,0.04) 0%, rgba(255,255,255,0.00) 100%);
+            position: relative;
+            overflow: hidden;
+            /* ensure the section itself is visually centered */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .why-choose-us .decor-circle {
+            position: absolute;
+            right: -120px;
+            top: -60px;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle at 30% 30%, rgba(225,121,33,0.16), rgba(225,121,33,0.04));
+            border-radius: 50%;
+            filter: blur(8px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        /* center the inner content and constrain width */
+        .why-choose-us .section-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .why-choose-us .feature-card {
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: linear-gradient(180deg,#fff,#fff);
+            box-shadow: 0 10px 30px rgba(14,21,47,0.04);
+            transition: transform .28s ease, box-shadow .28s ease;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+        .why-choose-us .feature-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(14,21,47,0.06); }
+        .why-choose-us .feature-icon {
+            width:56px; height:56px; border-radius:10px;
+            display:inline-grid; place-items:center; font-weight:800;
+            color:#fff; flex:0 0 56px; font-size:22px;
+            box-shadow: 0 8px 20px rgba(225,121,33,0.12);
+        }
+        .why-choose-us .icon-orange { background: linear-gradient(135deg,#E17921,#ff9a45); }
+        .why-choose-us .icon-blue   { background: linear-gradient(135deg,#3b82f6,#60a5fa); }
+        .why-choose-us .icon-green  { background: linear-gradient(135deg,#10b981,#34d399); }
+        .why-choose-us .feature-card h5 { margin:0; font-weight:800; color:var(--black); font-size:1.02rem; }
+        .why-choose-us .feature-card p { margin:6px 0 0; color:rgba(0,0,0,0.65); font-size:0.95rem; }
+
+        .why-choose-us .visual {
+            border-radius:12px; overflow:hidden; box-shadow: 0 12px 34px rgba(14,21,47,0.06);
+        }
+        .why-choose-us .visual img { width:100%; height:100%; object-fit:cover; display:block; }
+
+        .why-choose-us .stats {
+            margin-top:18px;
+            display:flex; gap:18px; justify-content:center; flex-wrap:wrap;
+        }
+        .why-choose-us .stat {
+            background:rgba(255,255,255,0.9);
+            padding:12px 18px; border-radius:10px;
+            min-width:120px; text-align:center; border:1px solid rgba(0,0,0,0.04);
+        }
+        .why-choose-us .stat .num { font-size:1.6rem; font-weight:900; color:var(--brand-orange); }
+        .why-choose-us .stat .lbl { font-size:0.85rem; color:rgba(0,0,0,0.6); margin-top:4px; }
+
+        .why-choose-us .cta-row { margin-top:22px; text-align:center; }
+        .why-choose-us .btn-ghost {
+            background:transparent; border:1px solid rgba(14,21,47,0.06); padding:10px 20px; border-radius:8px; font-weight:700;
+        }
+
+        /* force center-aligned text for this centered section */
+        .why-choose-us .text-start { text-align: center !important; }
+
+        /* layout tweaks for the internal grid to keep things centered */
+        .why-choose-us .row.align-items-center { justify-content: center; }
+        .why-choose-us .row.g-3 { justify-content: center; }
+
+        @media (min-width: 992px) {
+            .why-choose-us .stats { justify-content:flex-start; }
+            .why-choose-us .cta-row { text-align:left; }
+            /* keep cards side-by-side on wide screens but centered group */
+            .why-choose-us .row.g-3 { justify-content: flex-start; gap: 18px; }
+            .why-choose-us .text-start { text-align: left !important; }
+        }
+
+        @media (max-width: 768px) {
+            .why-choose-us .section-inner { padding: 24px; }
+        }
+    </style>
+
+    <div class="decor-circle" aria-hidden="true"></div>
+
+    <div class="container section-inner">
+        <div class="row align-items-center gy-4">
+            <div class="col-lg-10">
+                <div class="text-start mb-4">
+                    <div class="eyebrow mb-2" style="color:var(--brand-orange); font-weight:800; letter-spacing:0.12em; font-size:20px;">Why Choose Us?</div>
+                    <div style="width:70px;height:6px;background:var(--brand-orange);border-radius:4px;margin-bottom:12px;box-shadow:0 8px 18px rgba(225,121,33,0.08)"></div>
+                    <h3 style="font-family:'Bebas Neue', sans-serif; font-size:30px; margin-bottom:8px;">Creative craftsmanship. Reliable execution.</h3>
+                    <p class="text-muted" style="max-width:620px; margin: 0 auto;">From concept to installation, we combine bold design, premium materials, and a skilled production team to deliver standout visual experiences — on time, on brand.</p>
+                </div>
+
+                <div class="row g-3 justify-content-center">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="feature-card">
+                            <div class="feature-icon icon-orange" aria-hidden="true">MP</div>
+                            <div>
+                                <h5>End-to-End Production</h5>
+                                <p>Design, fabrication, and nationwide installation with a single point of contact.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-5">
+                        <div class="feature-card">
+                            <div class="feature-icon icon-blue" aria-hidden="true">⚙️</div>
+                            <div>
+                                <h5>Precision & Quality</h5>
+                                <p>Premium materials and quality checks to ensure durable, high-fidelity results.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-5">
+                        <div class="feature-card">
+                            <div class="feature-icon icon-green" aria-hidden="true">🌿</div>
+                            <div>
+                                <h5>Sustainable Choices</h5>
+                                <p>Eco-conscious materials and processes where possible to reduce waste.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-5">
+                        <div class="feature-card">
+                            <div class="feature-icon icon-pink" aria-hidden="true">🤝</div>
+                            <div>
+                                <h5>Trusted Partnerships</h5>
+                                <p>Collaborative approach with clear timelines, transparent pricing, and support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-center gap-3 mt-4">
+                    <div class="stats">
+                        <div class="stat" aria-hidden="true">
+                            <div class="num" data-target="128">0</div>
+                            <div class="lbl">Projects Completed</div>
+                        </div>
+                        <div class="stat" aria-hidden="true">
+                            <div class="num" data-target="74">0</div>
+                            <div class="lbl">Happy Clients</div>
+                        </div>
+                        <div class="stat" aria-hidden="true">
+                            <div class="num" data-target="12">0</div>
+                            <div class="lbl">Years of Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Simple intersection-driven counter animation (runs once when visible)
+        (function(){
+            const nums = document.querySelectorAll('.why-choose-us .num');
+            if (!nums.length) return;
+            const obs = new IntersectionObserver((entries, o) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        nums.forEach(el => {
+                            const target = +el.dataset.target || 0;
+                            const duration = 1200;
+                            const start = performance.now();
+                            const from = 0;
+                            function step(now){
+                                const t = Math.min(1, (now - start) / duration);
+                                el.innerText = Math.floor(t * (target - from) + from);
+                                if (t < 1) requestAnimationFrame(step);
+                                else el.innerText = target;
+                            }
+                            requestAnimationFrame(step);
+                        });
+                        o.disconnect();
+                    }
+                });
+            }, { threshold: 0.25 });
+            obs.observe(document.querySelector('.why-choose-us'));
+        })();
+    </script>
+</section>
+
+<section>
+    <div class="container">
+        <div class="text-center my-5">
+            <div class="eyebrow mb-2" style="color:var(--brand-orange); font-weight:700; letter-spacing:0.12em; font-size:20px;">Portfolio</div>
+            <div style="width:70px;height:6px;background:var(--brand-orange);border-radius:4px;margin-bottom:12px;box-shadow:0 8px 18px rgba(225,121,33,0.08)"></div>
+            <h3 style="font-family:'Bebas Neue', sans-serif; font-size:30px; margin-bottom:8px;">Our Recent Works</h3>
+            <p class="text-muted" style="max-width:620px; margin:auto;">A showcase of our latest projects demonstrating our expertise in signage, cladding, and graphic solutions.</p>
+        </div>
+</section>
+
+  <footer class="py-5 text-center">
+    <small class="text-muted">© <span id="year"></span> Master Pieces — All Rights Reserved</small>
+  </footer>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // ---------- Translation JSON ----------
+    const i18n = {
+        en: {
+            nav: { home: "Home", about: "About", services: "Services", portfolio: "Portfolio", team: "Team", contact: "Contact" },
+            hero: {
+                eyebrow: "Building Unique and Creative Design",
+                title: "WE TRANSFORM BRANDS THROUGH SIGNAGE & DESIGN",
+                subtitle: "Creating powerful visual experiences for every space.",
+                cta1: "Get Quote",
+                cta2: "Explore Services"
+            },
+
+            // About section
+            about: {
+                eyebrow: "About Us",
+                heading: "Crafting Visual Excellence. Building Brand Impact.",
+                p1: "At Master Pieces, we believe that every surface is a canvas — an opportunity to communicate, inspire, and leave a lasting impression. As a full-service visual branding and production agency, we deliver creative, durable, and visually striking solutions across signage, cladding, vehicle branding, and custom graphics.",
+                p2: "Founded on a passion for design and a commitment to precision, Master Pieces has grown into a trusted partner for businesses looking to stand out. From bold 3D signs and fleet branding to high-rise facades, we bring ideas to life with expert craftsmanship and cutting-edge technology.",
+                whatWeDoTitle: "What We Do",
+                whatWeDoList: [
+                    "Exterior & Interior Cladding",
+                    "Large-format Graphic Printing & Installation",
+                    "Vehicle Wrapping & Sticker Application",
+                    "Custom Signage & 3D Lettering",
+                    "Acrylic Fabrication & Branding Displays",
+                    "Banner Design & Printing",
+                    "Corporate & Environmental Graphics"
+                ],
+                missionTitle: "Our Mission",
+                missionText: "To transform everyday spaces into powerful brand experiences through innovative design, high-quality production, and reliable execution.",
+                visionTitle: "Our Vision",
+                visionText: "To be the leading name in visual branding and signage solutions — known for creativity, quality, and service excellence."
+            },
+
+            // Services section (expanded)
+            services: {
+                eyebrow: "Our Services",
+                tagline: "Creative. Bold. Impactful.",
+                description: "We deliver innovative visual communication solutions that elevate brands and transform spaces using premium materials and precision execution.",
+                items: {
+                    cladding: {
+                        title: "Cladding (Interior & Exterior)",
+                        bullets: [
+                            "Aluminum Composite Panels (ACP)",
+                            "Wooden, metallic, & textured finishes",
+                            "Storefront transformations",
+                            "Brand-integrated wall cladding"
+                        ]
+                    },
+                    printing: {
+                        title: "Graphic Printing & Installation",
+                        bullets: [
+                            "Wall graphics (interior & exterior)",
+                            "Window frosting & decals",
+                            "Floor graphics",
+                            "Custom murals"
+                        ]
+                    },
+                    vehicle: {
+                        title: "Vehicle Stickers & Application",
+                        bullets: [
+                            "Full & partial wraps",
+                            "Magnetic signs",
+                            "Reflective & specialty vinyls"
+                        ]
+                    },
+                    branding: {
+                        title: "Branding & Acrylic Works",
+                        bullets: [
+                            "Logo signs & display cases",
+                            "Custom acrylic letters",
+                            "POS branding elements"
+                        ]
+                    },
+                    banners: {
+                        title: "Banner Printing",
+                        bullets: [
+                            "PVC banners",
+                            "Roll-up & pop-up banners",
+                            "Mesh banners",
+                            "Event & promotional banners"
+                        ]
+                    },
+                    letters: {
+                        title: "3D Letters Fabrication",
+                        bullets: [
+                            "Zinkor, Acrylic, Stainless Steel",
+                            "Foam & Aluminum",
+                            "Backlit or front-lit options"
+                        ]
+                    },
+                    signage: {
+                        title: "Signage Design & Production",
+                        bullets: [
+                            "Indoor & outdoor signs",
+                            "Directional signage",
+                            "Digital & LED signage",
+                            "Safety signs"
+                        ]
+                    },
+                    graphics: {
+                        title: "Custom Graphics",
+                        bullets: [
+                            "Corporate branding",
+                            "Campaign visuals",
+                            "Illustrations & artwork",
+                            "Social media graphics"
+                        ]
+                    },
+                    additional: {
+                        title: "Additional Relevant Services",
+                        bullets: [
+                            "Wayfinding Systems for malls, hospitals, offices",
+                            "LED & Digital Display Solutions",
+                            "Full installation services nationwide",
+                            "Maintenance & repair support"
+                        ]
+                    }
+                }
+            },
+
+            // Why choose us / features / stats
+            why: {
+                eyebrow: "Why Choose Us?",
+                heading: "Creative craftsmanship. Reliable execution.",
+                intro: "From concept to installation, we combine bold design, premium materials, and a skilled production team to deliver standout visual experiences — on time, on brand.",
+                features: {
+                    endToEnd: {
+                        title: "End-to-End Production",
+                        desc: "Design, fabrication, and nationwide installation with a single point of contact."
+                    },
+                    precision: {
+                        title: "Precision & Quality",
+                        desc: "Premium materials and quality checks to ensure durable, high-fidelity results."
+                    },
+                    sustainable: {
+                        title: "Sustainable Choices",
+                        desc: "Eco-conscious materials and processes where possible to reduce waste."
+                    },
+                    partnerships: {
+                        title: "Trusted Partnerships",
+                        desc: "Collaborative approach with clear timelines, transparent pricing, and support."
+                    }
+                },
+                stats: {
+                    projects: "Projects Completed",
+                    clients: "Happy Clients",
+                    years: "Years of Experience"
+                }
+            },
+
+            // Portfolio
+            portfolio: {
+                eyebrow: "Portfolio",
+                heading: "Our Recent Works",
+                description: "A showcase of our latest projects demonstrating our expertise in signage, cladding, and graphic solutions."
+            },
+
+            // Footer
+            footer: { copyright: "All Rights Reserved" }
+        },
+
+        ar: {
+            nav: { home: "الرئيسية", about: "من نحن", services: "الخدمات", portfolio: "أعمالنا", team: "الفريق", contact: "اتصل بنا" },
+            hero: {
+                eyebrow: "بناء تصميم فريد وخلاق",
+                title: "نحوّل العلامات التجارية عبر اللافتات والتصميم",
+                subtitle: "نبتكر تجارب بصرية قوية لكل مساحة.",
+                cta1: "اطلب عرض سعر",
+                cta2: "استكشف الخدمات"
+            },
+
+            // About section
+            about: {
+                eyebrow: "من نحن",
+                heading: "نصنع تميزاً بصرياً. نبني تأثيراً للعلامة التجارية.",
+                p1: "في Master Pieces، نؤمن أن كل سطح هو لوحة — فرصة للتواصل، والإلهام، وترك انطباع يدوم. نحن وكالة متكاملة للعلامات التجارية والإنتاج توفر حلولاً إبداعية ومتينة وجذّابة بصريًا عبر اللافتات، والتكسية، وتغليف المركبات، والرسوم المخصصة.",
+                p2: "تأسسنا بدافع الشغف بالتصميم والالتزام بالدقة، ونمونا لنكون شريكًا موثوقًا للشركات الساعية للتميّز. من لافتات ثلاثية الأبعاد إلى واجهات المباني، نُجسّد الأفكار بحرفية عالية وتقنيات متقدمة.",
+                whatWeDoTitle: "ماذا نفعل",
+                whatWeDoList: [
+                    "التكسية الخارجية والداخلية",
+                    "الطباعة واسعة النطاق والتركيب",
+                    "تغليف المركبات وتطبيق الملصقات",
+                    "لافتات مخصصة وحروف ثلاثية الأبعاد",
+                    "تصنيع أكريليك والعناصر العرضية",
+                    "تصميم وطباعة البانرات",
+                    "الرسومات المؤسسية والبيئية"
+                ],
+                missionTitle: "مهمتنا",
+                missionText: "تحويل المساحات اليومية إلى تجارب علامة تجارية قوية من خلال التصميم المبتكر، والإنتاج عالي الجودة، والتنفيذ الموثوق.",
+                visionTitle: "رؤيتنا",
+                visionText: "أن نكون الاسم الرائد في حلول العلامات البصرية واللافتات — معروفون بالإبداع والجودة وخدمة متميزة."
+            },
+
+            // Services section (expanded)
+            services: {
+                eyebrow: "خدماتنا",
+                tagline: "إبداعي. جريء. ذو تأثير.",
+                description: "نقدّم حلول اتصال بصرية مبتكرة تعزز العلامات التجارية وتحول المساحات باستخدام مواد مميزة وتنفيذ دقيق.",
+                items: {
+                    cladding: {
+                        title: "التكسية (داخلية وخارجية)",
+                        bullets: [
+                            "ألواح مركبة من الألومنيوم (ACP)",
+                            "تشطيبات خشبية ومعدنية وملموسة",
+                            "تحويل واجهات المتاجر",
+                            "تكسية حوائط متكاملة مع العلامة التجارية"
+                        ]
+                    },
+                    printing: {
+                        title: "الطباعة والتركيب",
+                        bullets: [
+                            "رسومات جدارية داخلية وخارجية",
+                            "فروز النوافذ وملصقاتها",
+                            "رسومات أرضية",
+                            "جداريات مخصصة وتركيب احترافي"
+                        ]
+                    },
+                    vehicle: {
+                        title: "تغليف المركبات وتطبيق الملصقات",
+                        bullets: [
+                            "تغليف كامل وجزئي",
+                            "لافتات مغناطيسية",
+                            "فينيليات عاكسة ومتخصصة"
+                        ]
+                    },
+                    branding: {
+                        title: "العلامة التجارية وأعمال الأكريليك",
+                        bullets: [
+                            "لافتات شعارات وصناديق عرض",
+                            "حروف أكريليك مخصصة",
+                            "عناصر عرض نقط البيع (POS)"
+                        ]
+                    },
+                    banners: {
+                        title: "طباعة البانرات",
+                        bullets: [
+                            "بانرات PVC",
+                            "بانرات رول-أب وبوب-أب",
+                            "بانرات شبكية",
+                            "بانرات الفعاليات والترويج"
+                        ]
+                    },
+                    letters: {
+                        title: "تصنيع الحروف ثلاثية الأبعاد",
+                        bullets: [
+                            "زنكور، أكريليك، ستانلس ستيل",
+                            "رغوة وألومنيوم",
+                            "خيارات إضاءة خلفية أو أمامية"
+                        ]
+                    },
+                    signage: {
+                        title: "تصميم وإنتاج اللافتات",
+                        bullets: [
+                            "لافتات داخلية وخارجية",
+                            "لافتات إرشادية",
+                            "لافتات رقمية وLED",
+                            "لافتات السلامة"
+                        ]
+                    },
+                    graphics: {
+                        title: "الرسومات المخصصة",
+                        bullets: [
+                            "العلامة المؤسسية",
+                            "مرئيات الحملات",
+                            "الرسوم التوضيحية والأعمال الفنية",
+                            "مرئيات وسائل التواصل الاجتماعي"
+                        ]
+                    },
+                    additional: {
+                        title: "خدمات إضافية ذات صلة",
+                        bullets: [
+                            "أنظمة الإرشاد للمولات والمستشفيات والمكاتب",
+                            "حلول عرض LED والرقمية",
+                            "خدمات تركيب كاملة على مستوى الوطن",
+                            "دعم الصيانة والإصلاح"
+                        ]
+                    }
+                }
+            },
+
+            // Why choose us / features / stats
+            why: {
+                eyebrow: "لماذا تختارنا؟",
+                heading: "حرفية إبداعية. تنفيذ موثوق.",
+                intro: "من الفكرة إلى التركيب، نجمع بين تصميم جريء ومواد مميزة وفريق إنتاج ماهر لتقديم تجارب بصرية بارزة — في الوقت المحدد وبما يتوافق مع الهوية.",
+                features: {
+                    endToEnd: {
+                        title: "إنتاج شامل",
+                        desc: "التصميم، التصنيع، والتركيب الوطني مع نقطة اتصال واحدة."
+                    },
+                    precision: {
+                        title: "الدقة والجودة",
+                        desc: "مواد مميزة وفحوصات جودة لضمان نتائج متينة وعالية الدقة."
+                    },
+                    sustainable: {
+                        title: "خيارات مستدامة",
+                        desc: "مواد وعمليات صديقة للبيئة حيثما أمكن لتقليل الهدر."
+                    },
+                    partnerships: {
+                        title: "شراكات موثوقة",
+                        desc: "نهج تعاوني مع جداول زمنية واضحة وتسعير شفاف ودعم مستمر."
+                    }
+                },
+                stats: {
+                    projects: "المشاريع المنجزة",
+                    clients: "عملاء سعداء",
+                    years: "سنوات الخبرة"
+                }
+            },
+
+            // Portfolio
+            portfolio: {
+                eyebrow: "أعمالنا",
+                heading: "أعمالنا الأخيرة",
+                description: "معرض لأحدث مشاريعنا يظهر خبرتنا في اللافتات، والتكسية، والحلول الرسومية."
+            },
+
+            // Footer
+            footer: { copyright: "جميع الحقوق محفوظة" }
+        }
+    };
+
+    // ---------- Utility: apply translations ----------
+    function applyTranslation(lang = 'en') {
+        document.documentElement.lang = lang;
+        const translations = i18n[lang] || i18n.en;
+
+        // 1) data-i18n attributes (existing markers)
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const path = el.getAttribute('data-i18n').split('.');
+            let value = translations;
+            for (const key of path) {
+                value = value ? value[key] : null;
+            }
+            if (value !== null && value !== undefined) el.innerText = value;
+        });
+
+        // 2) Manual mappings for sections that don't have data-i18n attributes
+        try {
+            // About section
+            const about = translations.about || {};
+            const aboutSection = document.querySelector('section.container.my-5');
+            if (aboutSection) {
+                const abEyebrow = aboutSection.querySelector('.eyebrow');
+                if (abEyebrow) abEyebrow.innerText = about.eyebrow || abEyebrow.innerText;
+
+                const abH2 = aboutSection.querySelector('h2');
+                if (abH2) abH2.innerText = about.heading || abH2.innerText;
+
+                const abParas = aboutSection.querySelectorAll('p.text-muted');
+                if (abParas[0]) abParas[0].innerText = about.p1 || abParas[0].innerText;
+                if (abParas[1]) abParas[1].innerText = about.p2 || abParas[1].innerText;
+
+                const whatTitle = aboutSection.querySelector('h6.mb-2');
+                if (whatTitle) whatTitle.innerText = about.whatWeDoTitle || whatTitle.innerText;
+
+                const whatList = aboutSection.querySelector('.list-unstyled');
+                if (whatList && Array.isArray(about.whatWeDoList)) {
+                    whatList.innerHTML = about.whatWeDoList.map(item => `<li class="mb-1">• ${item}</li>`).join('');
+                }
+
+                // mission/vision
+                const mission = aboutSection.querySelectorAll('.p-3.bg-light.rounded.flex-fill');
+                // fallback: find by h6 text
+                const missionEl = aboutSection.querySelectorAll('h6.mb-1');
+                if (missionEl[0]) missionEl[0].innerText = about.missionTitle || missionEl[0].innerText;
+                if (missionEl[1]) missionEl[1].innerText = about.visionTitle || missionEl[1].innerText;
+
+                const missionP = aboutSection.querySelectorAll('.p-3.bg-light.rounded .small');
+                if (missionP[0]) missionP[0].innerText = about.missionText || missionP[0].innerText;
+                if (missionP[1]) missionP[1].innerText = about.visionText || missionP[1].innerText;
+            }
+
+            // Services section (top intro)
+            const services = translations.services || {};
+            const servicesTop = document.querySelector('#services .text-center');
+            if (servicesTop) {
+                const sEyebrow = servicesTop.querySelector('.eyebrow');
+                if (sEyebrow) sEyebrow.innerText = services.eyebrow || sEyebrow.innerText;
+
+                const sTag = servicesTop.querySelector('p.text-muted');
+                if (sTag) sTag.innerText = services.tagline || sTag.innerText;
+
+                const sDesc = servicesTop.nextElementSibling && servicesTop.nextElementSibling.tagName === 'P' ? servicesTop.nextElementSibling : null;
+                // Many templates put the description in a p right after; try to find the first p in .text-center group
+                const sPara = servicesTop.querySelectorAll('p');
+                if (sPara[1]) sPara[1].innerText = services.description || sPara[1].innerText;
+            }
+
+            // Services cards: rely on order — replace titles and lists based on services.items ordering
+            const serviceItemsOrder = [
+                'cladding','printing','vehicle','branding',
+                'banners','letters','signage','graphics'
+            ];
+            const serviceCards = document.querySelectorAll('#services .row > .col-md-6, #services .row > .col-md-6.col-lg-4');
+            serviceCards.forEach((col, idx) => {
+                const key = serviceItemsOrder[idx];
+                if (!key) return;
+                const data = (services.items && services.items[key]) || null;
+                if (!data) return;
+                const titleEl = col.querySelector('.card-title, h5.card-title, .card-body h5');
+                if (titleEl) titleEl.innerText = data.title || titleEl.innerText;
+                const ul = col.querySelector('ul');
+                if (ul && Array.isArray(data.bullets)) {
+                    ul.innerHTML = data.bullets.map(it => `<li>${it}</li>`).join('');
+                }
+            });
+
+            // Additional services large card
+            const additionalCard = document.querySelector('#services .col-lg-8 .card-body');
+            if (additionalCard && services.items && services.items.additional) {
+                const h5 = additionalCard.querySelector('.card-title');
+                if (h5) h5.innerText = services.items.additional.title || h5.innerText;
+                const ul = additionalCard.querySelector('ul');
+                if (ul) ul.innerHTML = services.items.additional.bullets.map(it => `<li>${it}</li>`).join('');
+            }
+
+            // Why choose us
+            const why = translations.why || {};
+            const whySection = document.querySelector('.why-choose-us');
+            if (whySection) {
+                const wEyebrow = whySection.querySelector('.eyebrow');
+                if (wEyebrow) wEyebrow.innerText = why.eyebrow || wEyebrow.innerText;
+
+                const wHeading = whySection.querySelector('h3');
+                if (wHeading) wHeading.innerText = why.heading || wHeading.innerText;
+
+                const wIntro = whySection.querySelector('p.text-muted');
+                if (wIntro) wIntro.innerText = why.intro || wIntro.innerText;
+
+                // Features (4 cards)
+                const featureCards = whySection.querySelectorAll('.feature-card');
+                const featureKeys = ['endToEnd','precision','sustainable','partnerships'];
+                featureCards.forEach((card, i) => {
+                    const key = featureKeys[i];
+                    const data = (why.features && why.features[key]) || null;
+                    if (!data) return;
+                    const h5 = card.querySelector('h5');
+                    const p = card.querySelector('p');
+                    if (h5) h5.innerText = data.title || h5.innerText;
+                    if (p) p.innerText = data.desc || p.innerText;
+                });
+
+                // Stats
+                const stats = whySection.querySelectorAll('.stat');
+                if (stats && stats.length >= 3) {
+                    const statKeys = ['projects','clients','years'];
+                    stats.forEach((st, i) => {
+                        const key = statKeys[i];
+                        const label = st.querySelector('.lbl');
+                        if (label) label.innerText = (why.stats && why.stats[key]) || label.innerText;
+                        // leave the numeric counter data-targets as-is (they are set in HTML)
+                    });
+                }
+            }
+
+            // Portfolio
+            const portfolio = translations.portfolio || {};
+            const portfolioSection = Array.from(document.querySelectorAll('section')).find(s => {
+                return s.querySelector('.eyebrow') && s.querySelector('h3') && s.querySelector('.text-muted');
+            });
+            if (portfolioSection) {
+                const pEyebrow = portfolioSection.querySelector('.eyebrow');
+                if (pEyebrow) pEyebrow.innerText = portfolio.eyebrow || pEyebrow.innerText;
+                const pHeading = portfolioSection.querySelector('h3');
+                if (pHeading) pHeading.innerText = portfolio.heading || pHeading.innerText;
+                const pDesc = portfolioSection.querySelector('.text-muted');
+                if (pDesc) pDesc.innerText = portfolio.description || pDesc.innerText;
+            }
+
+            // Footer
+            const footer = translations.footer || {};
+            const footerEl = document.querySelector('footer.small, footer small, footer .text-muted');
+            if (footerEl) {
+                // Keep © year and company name, replace trailing copyright phrase
+                const yearEl = document.getElementById('year');
+                const year = yearEl ? yearEl.innerText : (new Date()).getFullYear();
+                footerEl.innerText = `© ${year} Master Pieces — ${footer.copyright || ''}`;
+            }
+        } catch (err) {
+            // fail silently to avoid breaking page if DOM structure differs
+            console.warn('i18n applyTranslation partial failure:', err);
+        }
+    }
+
+    // ---------- RTL handling ----------
+    function setDirection(isRTL) {
+        if (isRTL) {
+            document.documentElement.setAttribute('dir', 'rtl');
+            // flip navbar layout using Bootstrap utilities if present
+            const navbar = document.querySelector('.site-navbar .navbar');
+            if (navbar && !navbar.classList.contains('flex-row-reverse')) navbar.classList.add('flex-row-reverse');
+            // also mirror text alignment for certain sections
+            document.querySelectorAll('.text-start').forEach(el => el.classList.remove('text-start'));
+        } else {
+            document.documentElement.setAttribute('dir', 'ltr');
+            const navbar = document.querySelector('.site-navbar .navbar');
+            if (navbar && navbar.classList.contains('flex-row-reverse')) navbar.classList.remove('flex-row-reverse');
+        }
+    }
+
+    // ---------- Language switching logic ----------
+    const btnEn = document.getElementById('btn-en');
+    const btnAr = document.getElementById('btn-ar');
+
+    function setActiveLangUI(lang) {
+        if (btnEn) btnEn.style.opacity = lang === 'en' ? 1 : 0.6;
+        if (btnAr) btnAr.style.opacity = lang === 'ar' ? 1 : 0.6;
+    }
+
+    function changeLanguage(lang) {
+        // apply translations
+        applyTranslation(lang);
+
+        // handle direction
+        const isRTL = (lang === 'ar');
+        setDirection(isRTL);
+
+        // store choice
+        try { localStorage.setItem('site_lang', lang); } catch(e){}
+
+        setActiveLangUI(lang);
+    }
+
+    // attach events safely
+    if (btnEn) btnEn.addEventListener('click', () => changeLanguage('en'));
+    if (btnAr) btnAr.addEventListener('click', () => changeLanguage('ar'));
+
+    // set year in footer
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.innerText = (new Date()).getFullYear();
+
+    // init on load
+    (function init(){
+        const saved = (() => {
+            try { return localStorage.getItem('site_lang') || 'en'; } catch(e){ return 'en'; }
+        })();
+        changeLanguage(saved);
+    })();
+</script>
+</body>
+</html>
