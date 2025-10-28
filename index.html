@@ -165,19 +165,175 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-        <ul class="navbar-nav align-items-center">
-          <li class="nav-item"><a class="nav-link active" data-i18n="nav.home" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" data-i18n="nav.about" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link" data-i18n="nav.services" href="#">Services</a></li>
-          <li class="nav-item"><a class="nav-link" data-i18n="nav.portfolio" href="#">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link" data-i18n="nav.team" href="#">Team</a></li>
-          <li class="nav-item"><a class="nav-link" data-i18n="nav.contact" href="#">Contact</a></li>
-        </ul>
-        <div class="d-flex align-items-center ms-3 lang-toggle">
-          <!-- Language toggle: show both, active style applied via JS -->
-          <button id="btn-en" class="btn" title="English">🇬🇧 <span class="d-none d-md-inline">EN</span></button>
-          <button id="btn-ar" class="btn" title="Arabic">🇸🇦 <span class="d-none d-md-inline">AR</span></button>
+    <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="#" data-target="hero" data-i18n="nav.home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target="about" data-i18n="nav.about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target="services" data-i18n="nav.services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target="portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target="team" data-i18n="nav.team">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target="contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <script>
+      (function(){
+        // map logical targets to DOM nodes (keeps HTML unchanged)
+        const mapping = {
+        hero: () => document.querySelector('.hero'),
+        about: () => document.querySelector('section.container.my-5'),
+        services: () => document.getElementById('services'),
+        portfolio: () => Array.from(document.querySelectorAll('section')).find(s => {
+          return s.querySelector('.eyebrow') && s.querySelector('h3') && s.querySelector('.text-muted');
+        }),
+        team: () => document.getElementById('team'),
+        contact: () => document.getElementById('contact') || document.querySelector('footer')
+        };
+
+        function closeMobileNav() {
+        const collapse = document.getElementById('mainNav');
+        if (!collapse) return;
+        if (collapse.classList.contains('show')) {
+          collapse.classList.remove('show');
+          const toggler = document.querySelector('.navbar-toggler');
+          if (toggler) toggler.setAttribute('aria-expanded', 'false');
+        }
+        }
+
+        document.querySelectorAll('#mainNav .nav-link[data-target]').forEach(link => {
+        link.addEventListener('click', function(e){
+          e.preventDefault();
+          const key = this.getAttribute('data-target');
+          const getter = mapping[key];
+          const targetEl = getter ? getter() : null;
+
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            // fallback: scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+
+          // set active state
+          document.querySelectorAll('#mainNav .nav-link').forEach(n => n.classList.remove('active'));
+          this.classList.add('active');
+
+          // close collapsed navbar on mobile
+          closeMobileNav();
+        });
+        });
+      })();
+    </script>
+
+    <!-- Scroll-to-top button -->
+    <style>
+      .scroll-top {
+        position: fixed;
+        right: 20px;
+        bottom: 24px;
+        width: 48px;
+        height: 48px;
+        border-radius: 999px;
+        background: var(--brand-orange);
+        color: #fff;
+        border: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(14,21,47,0.12);
+        z-index: 9999;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity .22s ease, transform .22s ease;
+      }
+      .scroll-top.show { opacity: 1; transform: translateY(0); }
+      .scroll-top:focus { outline: 3px solid rgba(255,255,255,0.18); outline-offset: 2px; }
+      /* RTL support: flip to left */
+      html[dir="rtl"] .scroll-top { right: auto; left: 20px; }
+    </style>
+
+    <button id="scrollTop" class="scroll-top" aria-label="Scroll to top" title="Back to top">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <script>
+      (function(){
+        const btn = document.getElementById('scrollTop');
+        if (!btn) return;
+
+        const showAt = 300; // px scrolled before showing button
+
+        function updateVisibility(){
+          if (window.scrollY > showAt) btn.classList.add('show');
+          else btn.classList.remove('show');
+        }
+
+        // initial state
+        updateVisibility();
+
+        // throttled scroll listener
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              updateVisibility();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }, { passive: true });
+
+        // click -> smooth scroll to top
+        btn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          // for accessibility, move focus to top landmark (header) if present
+          const header = document.querySelector('header.site-navbar');
+          if (header) header.setAttribute('tabindex', '-1'), header.focus();
+        });
+
+        // show when user reaches bottom as well (optional): if near bottom, ensure visible
+        window.addEventListener('resize', updateVisibility, { passive: true });
+      })();
+    </script>
+        <div class="d-flex align-items-center ms-3 lang-toggle" role="group" aria-label="Language switcher">
+            <style>
+                .lang-btn{
+                    display:inline-flex;
+                    align-items:center;
+                    gap:10px;
+                    padding:8px 14px;
+                    border-radius:999px;
+                    border:1px solid rgba(0,0,0,0.06);
+                    background:rgba(255,255,255,0.98);
+                    font-weight:800;
+                    font-size:13px;
+                    transition:all .18s ease;
+                    box-shadow:0 8px 22px rgba(14,21,47,0.04);
+                    color:var(--black);
+                }
+                .lang-btn .flag{ font-size:18px; line-height:1; }
+                .lang-btn .lbl{ letter-spacing:.08em; text-transform:uppercase; display:inline-block; }
+                .lang-btn.icon-orange{
+                    border-color:var(--brand-orange);
+                    color:var(--brand-orange);
+                    background: linear-gradient(180deg, rgba(225,121,33,0.06), rgba(255,255,255,0.02));
+                    box-shadow:0 10px 28px rgba(225,121,33,0.08);
+                }
+                .lang-btn:hover{ transform:translateY(-3px); box-shadow:0 18px 36px rgba(14,21,47,0.06); }
+                @media (max-width:767px){ .lang-btn .lbl{ display:none; } }
+            </style>
+
+            <button id="btn-en" type="button" class="btn lang-btn icon-orange" title="English" aria-pressed="false">
+                <span class="flag" aria-hidden="true">🇬🇧</span>
+                <span class="lbl">EN</span>
+            </button>
+
+            <button id="btn-ar" type="button" class="btn lang-btn ms-2" title="Arabic" aria-pressed="false">
+                <span class="flag" aria-hidden="true">🇸🇦</span>
+                <span class="lbl">AR</span>
+            </button>
         </div>
       </div>
     </nav>
